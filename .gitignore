@@ -1,0 +1,14 @@
+.idea/
+.vscode/
+*.swp
+*.swo
+
+.DS_Store
+Thumbs.db
+
+node_modules/
+dist/
+*.log
+
+.env
+.env.local
