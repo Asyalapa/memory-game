@@ -12,6 +12,10 @@
 - Кнопка «Новая игра» — перезапуск без перезагрузки страницы
 - Интерфейс на чистом JavaScript без фреймворков и библиотек
 
+## Демо: 
+
+https://asyalapa.github.io/memory-game/
+
 ## Стек
 
 - Vanilla JavaScript (ES6+)
@@ -21,11 +25,18 @@
 - `localStorage` для хранения результатов
 - Vite для сборки
 
-## Ограничения задания (RS School)
+## Запуск
 
-- Вся разметка генерируется через `document.createElement`
-- В `<body>` только `<script>`
-- Запрещены `innerHTML`, `outerHTML`, `insertAdjacentHTML`,
-  `document.write`, `DOMParser`, `Range.createContextualFragment`
-- Запрещены `alert`, `confirm`, `prompt`
-- Без сторонних UI-библиотек и фреймворков
+Нужен Node.js 22+.
+
+```bash
+git clone https://github.com/Asyalapa/memory-game.git
+cd memory-game
+git checkout memory-game
+npm install
+npm run dev
+```
+
+Открыть адрес, который напечатает Vite.
+
+Сборка: `npm run build`, проверка линтером: `npm run lint`.
