@@ -1,0 +1,170 @@
+:root {
+    --bg: #eef0f4;
+    --ink: #1b1f3b;
+    --back: #052a62;
+    --back-dot: #5b60c4;
+    --open: #ffffff;
+    --matched: #c9f0dc;
+    --accent: #e8553d;
+    --radius: 14px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family:
+        system-ui,
+        -apple-system,
+        'Segoe UI',
+        Roboto,
+        sans-serif;
+}
+body.is-locked {
+    overflow: hidden;
+}
+
+.app {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+.header__title {
+    margin: 0;
+    font-size: 1.6rem;
+}
+.header__actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn {
+    padding: 10px 16px;
+    border: 2px solid var(--ink);
+    border-radius: 10px;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn:hover {
+    background: var(--ink);
+    color: var(--bg);
+}
+
+.counters {
+    display: flex;
+    gap: 24px;
+    margin: 20px 0 12px;
+    font-size: 1.1rem;
+}
+.counter {
+    margin: 0;
+}
+.counter__value {
+    font-weight: 700;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.card {
+    aspect-ratio: 1;
+    border: 0;
+    border-radius: var(--radius);
+    background:
+        url('../imgs/back.png') center / cover no-repeat var(--back);
+    /*font-size: clamp(1.8rem, 9vw, 3rem);*/
+    cursor: pointer;
+}
+.card--open {
+    background: var(--open);
+    box-shadow: inset 0 0 0 3px var(--accent);
+    cursor: default;
+}
+.card--matched {
+    background: var(--matched);
+    cursor: default;
+}
+
+.card__face {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.card__img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    user-select: none;
+}
+
+.card__img:not([src]) {
+    display: none;
+}
+
+.card--closed .card__img {
+    display: none;
+}
+
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 16px;
+    background: rgba(27, 31, 59, 0.7);
+}
+.modal {
+    width: min(420px, 100%);
+    max-height: 90vh;
+    overflow: auto;
+    padding: 24px;
+    border-radius: var(--radius);
+    background: #fff;
+}
+.modal__title {
+    margin: 0 0 12px;
+}
+.modal__text {
+    margin: 0 0 16px;
+}
+.modal__actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 16px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.table th,
+.table td {
+    padding: 6px 8px;
+    text-align: left;
+    border-bottom: 1px solid #d8dbe6;
+}
